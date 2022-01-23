@@ -10,4 +10,13 @@ object BindingAdapters {
         Glide.with(view.context).load(url)
             .into(view)
     }
+
+    @androidx.databinding.BindingAdapter("circleImage")
+    @JvmStatic
+    fun loadImageToCircle(view: ImageView, url: String) {
+        Glide.with(view.context).load(url)
+            .centerCrop()
+            .circleCrop()
+            .into(view)
+    }
 }

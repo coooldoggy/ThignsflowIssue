@@ -12,11 +12,16 @@ import com.coooldoggy.thignsflowissue.framework.model.IssueData
 
 class MainIssueAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    companion object{
+    companion object {
         private val TAG = MainIssueAdapter::class.java.simpleName
     }
 
+    interface onClickIssue {
+        fun onClickIssueItem(data: IssueData)
+        fun onClickImage(url: String)
+    }
     var issueList : List<IssueData> = emptyList()
+    var issueClickListener: onClickIssue? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when(viewType){
@@ -44,12 +49,18 @@ class MainIssueAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             0 -> {
                 (holder as? ImageHolder)?.runCatching {
                   bind("https://s3.ap-northeast-2.amazonaws.com/hellobot-kr-test/image/main_logo.png")
+                    itemView.setOnClickListener {
+                        issueClickListener?.onClickImage("https://thingsflow.com/ko/home")
+                    }
                 }
             }
             else -> {
                 (holder as? IssueHolder)?.runCatching {
                     Log.d(TAG, "IssueHolder ${issueList[position]}")
                     bind(issueList[position])
+                    itemView.setOnClickListener {
+                        issueClickListener?.onClickIssueItem(issueList[position])
+                    }
                 }
             }
         }

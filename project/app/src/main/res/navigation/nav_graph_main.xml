@@ -7,19 +7,23 @@
 
     <fragment
         android:id="@+id/mainIssueFragment"
-        android:label="MainIssueFragment"
         android:name="com.coooldoggy.thignsflowissue.ui.fragment.MainIssueFragment"
+        android:label="MainIssueFragment"
         tools:layout="@layout/fragment_main_issue">
 
         <action
-            android:id="@+id/mainIssueFragment_to_issueDetailFragment"
-            app:destination="@+id/issueDetailFragment"/>
+            android:id="@+id/action_mainIssueFragment_to_issueDetailFragment"
+            app:destination="@+id/issueDetailFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/issueDetailFragment"
-        android:label="IssueDetailFragment"
         android:name="com.coooldoggy.thignsflowissue.ui.fragment.IssueDetailFragment"
-        tools:layout="@layout/fragment_issue_detail"/>
+        android:label="IssueDetailFragment"
+        tools:layout="@layout/fragment_issue_detail">
+        <argument
+            android:name="issueData"
+            app:argType="com.coooldoggy.thignsflowissue.framework.model.IssueData" />
+    </fragment>
 
 </navigation>
