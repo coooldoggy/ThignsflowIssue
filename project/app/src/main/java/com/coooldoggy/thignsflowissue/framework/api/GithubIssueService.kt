@@ -10,15 +10,15 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
-import retrofit2.http.Query
+import retrofit2.http.Path
 
 interface GithubIssueService {
 
     @GET("/repos/{owner}/{org}/issues")
     suspend fun queryIssues(
-        @Query("owner") owner: String,
-        @Query("org") org: String
-    ): Response<IssueData>
+        @Path("owner") owner: String,
+        @Path("org") org: String
+    ): Response<List<IssueData>>
 
     companion object{
         fun <S> createService(serviceClass: Class<S>): S {

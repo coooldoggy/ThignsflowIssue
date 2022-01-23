@@ -1,4 +1,6 @@
 package com.coooldoggy.thignsflowissue.ui.fragment
 
-class IssueDetailFragment {
+import androidx.fragment.app.Fragment
+
+class IssueDetailFragment: Fragment() {
 }

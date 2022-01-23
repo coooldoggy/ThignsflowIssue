@@ -5,7 +5,7 @@ import java.io.Serializable
 
 data class LabelData(
     @SerializedName("id")
-    val id: Int,
+    val id: Long,
 
     @SerializedName("node_id")
     val nodeId: String,

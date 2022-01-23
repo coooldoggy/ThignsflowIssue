@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph_main">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/mainIssueFragment">
+
+    <fragment
+        android:id="@+id/mainIssueFragment"
+        android:label="MainIssueFragment"
+        android:name="com.coooldoggy.thignsflowissue.ui.fragment.MainIssueFragment"
+        tools:layout="@layout/fragment_main_issue">
+
+        <action
+            android:id="@+id/mainIssueFragment_to_issueDetailFragment"
+            app:destination="@+id/issueDetailFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/issueDetailFragment"
+        android:label="IssueDetailFragment"
+        android:name="com.coooldoggy.thignsflowissue.ui.fragment.IssueDetailFragment"
+        tools:layout="@layout/fragment_issue_detail"/>
 
 </navigation>

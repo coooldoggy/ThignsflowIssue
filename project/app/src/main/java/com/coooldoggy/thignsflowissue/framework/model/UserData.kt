@@ -8,7 +8,7 @@ data class UserData(
     val login : String,
 
     @SerializedName("id")
-    val id: Int,
+    val id: Long,
 
     @SerializedName("node_id")
     val nodeId: String,

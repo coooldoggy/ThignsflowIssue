@@ -1,8 +1,7 @@
 package com.coooldoggy.thignsflowissue
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.fragment.NavHostFragment
+import androidx.appcompat.app.AppCompatActivity
 import com.coooldoggy.thignsflowissue.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -14,10 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val innerBinding = ActivityMainBinding.inflate(layoutInflater)
-        binding = innerBinding
-        setContentView(innerBinding.root)
-
-        val navHostFragment = supportFragmentManager.findFragmentById(innerBinding.navHostFragment.id) as? NavHostFragment
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding?.root)
     }
 }

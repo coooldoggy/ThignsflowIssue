@@ -5,81 +5,90 @@ import java.io.Serializable
 
 data class IssueData(
     @SerializedName("id")
-    val id: Int,
+    val id: Long,
 
     @SerializedName("node_id")
-    val nodeId: String,
+    val nodeId: String? = null,
 
     @SerializedName("url")
-    val url: String,
+    val url: String? = null,
 
     @SerializedName("repository_url")
-    val repositoryUrl: String,
+    val repositoryUrl: String? = null,
+
+    @SerializedName("timeline_url")
+    val timelineUrl: String? = null,
 
     @SerializedName("labels_url")
-    val labelsUrl: String,
+    val labelsUrl: String? = null,
 
     @SerializedName("comments_url")
-    val commentsUrl: String,
+    val commentsUrl: String? = null,
 
     @SerializedName("events_url")
-    val eventsUrl: String,
+    val eventsUrl: String? = null,
 
     @SerializedName("html_url")
-    val htmlUrl: String,
+    val htmlUrl: String? = null,
 
     @SerializedName("number")
     val number: Int,
 
     @SerializedName("state")
-    val state: String,
+    val state: String? = null,
 
     @SerializedName("title")
-    val title: String,
+    val title: String? = null,
 
     @SerializedName("body")
-    val body: String,
+    val body: String? = null,
 
     @SerializedName("user")
-    val user: UserData,
+    val user: UserData? = null,
 
     @SerializedName("labels")
-    val labels: List<LabelData>,
+    val labels: List<LabelData>? = null,
 
     @SerializedName("assignee")
-    val assignee: UserData,
+    val assignee: UserData? = null,
 
     @SerializedName("assignees")
-    val assignees: List<UserData>,
+    val assignees: List<UserData>? = null,
 
     @SerializedName("milestone")
-    val milestone: MileStoneData,
+    val milestone: MileStoneData? = null,
 
     @SerializedName("locked")
-    val locked: Boolean,
+    val locked: Boolean? = null,
 
     @SerializedName("active_lock_reason")
-    val activeLockReason: String,
+    val activeLockReason: String? = null,
 
     @SerializedName("comments")
     val comments: Int,
 
     @SerializedName("pull_request")
-    val pullRequest: PullRequestData,
+    val pullRequest: PullRequestData? = null,
 
     @SerializedName("closed_at")
     val closedAt: String? = null,
 
     @SerializedName("created_at")
-    val createdAt: String,
+    val createdAt: String? = null,
 
     @SerializedName("updated_at")
-    val updatedAt: String,
+    val updatedAt: String? = null,
 
     @SerializedName("repository")
-    val repository: RepositoryData,
+    val repository: RepositoryData? = null,
 
     @SerializedName("author_association")
-    val authorAssociation: String
+    val authorAssociation: String? = null,
+
+    @SerializedName("performed_via_github_app")
+    val performedViaGithubApp: Boolean? = null,
+
+    @SerializedName("draft")
+    val draft: Boolean
 
     ) : Serializable
